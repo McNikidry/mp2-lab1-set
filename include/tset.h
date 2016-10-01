@@ -10,12 +10,13 @@
 
 #include "tbitfield.h"
 
-class TSet
+class TSet 
 {
 private:
   int MaxPower;       // максимальная мощность множества
   TBitField BitField; // битовое поле для хранения характеристического вектора
 public:
+	TSet() {};
   TSet(int mp);
   TSet(const TSet &s);       // конструктор копирования
   TSet(const TBitField &bf); // конструктор преобразования типа
