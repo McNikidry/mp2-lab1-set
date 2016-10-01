@@ -2,6 +2,26 @@
 
 #include <gtest.h>
 
+TEST(TBitField,MY_TEST)
+{
+	int size = 3;
+	TBitField bf(size), bf1(size);
+	bf.SetBit(1);
+	bf.SetBit(2);
+	bf1.SetBit(1);
+	bf1.SetBit(2);
+	EXPECT_EQ(bf1, bf);
+}
+TEST(TBitField, MY_TEST_2)
+{
+	int size = 4;
+	TBitField bf(size), bf1(size);
+	bf.SetBit(1);
+	bf.SetBit(3);
+	bf1.SetBit(1);
+	bf1.SetBit(2);
+	EXPECT_NE(bf1, bf);
+}
 TEST(TBitField, can_create_bitfield_with_positive_length)
 {
   ASSERT_NO_THROW(TBitField bf(3));
